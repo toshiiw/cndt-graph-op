@@ -1,0 +1,24 @@
+# permissions for end users to edit maxflows.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: maxflow-editor-role
+rules:
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows/status
+  verbs:
+  - get

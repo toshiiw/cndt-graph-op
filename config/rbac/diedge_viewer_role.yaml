@@ -1,0 +1,20 @@
+# permissions for end users to view diedges.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: diedge-viewer-role
+rules:
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - diedges
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - diedges/status
+  verbs:
+  - get

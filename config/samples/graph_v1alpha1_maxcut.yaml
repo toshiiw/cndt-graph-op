@@ -1,0 +1,7 @@
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: MaxCut
+metadata:
+  name: maxcut-sample
+spec:
+  # Add fields here
+  foo: bar

@@ -1,0 +1,81 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.1
+  creationTimestamp: null
+  name: diedges.graph.example.valinux.co.jp
+spec:
+  group: graph.example.valinux.co.jp
+  names:
+    kind: DiEdge
+    listKind: DiEdgeList
+    plural: diedges
+    singular: diedge
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.from
+      name: From
+      type: string
+    - jsonPath: .spec.to
+      name: To
+      type: string
+    - jsonPath: .spec.allocated
+      name: Allocated
+      type: integer
+    - jsonPath: .spec.capacity
+      name: Capacity
+      type: integer
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DiEdge is the Schema for the diedges API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DiEdgeSpec defines the desired state of DiEdge
+            properties:
+              allocated:
+                default: 0
+                format: int32
+                type: integer
+              capacity:
+                format: int32
+                type: integer
+              from:
+                type: string
+              to:
+                type: string
+            required:
+            - capacity
+            - from
+            - to
+            type: object
+          status:
+            description: DiEdgeStatus defines the observed state of DiEdge
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

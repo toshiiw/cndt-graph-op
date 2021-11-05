@@ -1,0 +1,138 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - diedges
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - diedges/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - diedges/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - edges
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - edges/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - edges/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxcuts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxcuts/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxcuts/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - vertices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - vertices/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - vertices/status
+  verbs:
+  - get
+  - patch
+  - update

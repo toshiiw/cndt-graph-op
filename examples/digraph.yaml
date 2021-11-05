@@ -1,0 +1,70 @@
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e1
+spec:
+        from: a
+        to: b
+        capacity: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e2
+spec:
+        from: a
+        to: c
+        capacity: 20
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e3
+spec:
+        from: b
+        to: d
+        capacity: 5
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e4
+spec:
+        from: b
+        to: e
+        capacity: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e5
+spec:
+        from: d
+        to: z
+        capacity: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e6
+spec:
+        from: e
+        to: z
+        capacity: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: DiEdge
+metadata:
+        name: e7
+spec:
+        from: c
+        to: z
+        capacity: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: MaxFlow
+metadata:
+        name: problem
+spec:
+        from: a
+        to: z

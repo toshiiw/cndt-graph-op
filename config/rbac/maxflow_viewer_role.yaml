@@ -1,0 +1,20 @@
+# permissions for end users to view maxflows.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: maxflow-viewer-role
+rules:
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - maxflows/status
+  verbs:
+  - get

@@ -1,0 +1,24 @@
+# permissions for end users to edit edges.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: edge-editor-role
+rules:
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - edges
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - graph.example.valinux.co.jp
+  resources:
+  - edges/status
+  verbs:
+  - get

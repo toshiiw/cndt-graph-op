@@ -1,0 +1,56 @@
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: Edge
+metadata:
+        name: e1
+spec:
+        vertex:
+        - a
+        - b
+        weight: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: Edge
+metadata:
+        name: e2
+spec:
+        vertex:
+        - a
+        - c
+        weight: 10
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: Edge
+metadata:
+        name: e3
+spec:
+        vertex:
+        - c
+        - b
+        weight: 5
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: Edge
+metadata:
+        name: e4
+spec:
+        vertex:
+        - c
+        - d
+        weight: 5
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: Edge
+metadata:
+        name: e5
+spec:
+        vertex:
+        - c
+        - e
+        weight: 5
+---
+apiVersion: graph.example.valinux.co.jp/v1alpha1
+kind: MaxCut
+metadata:
+        name: problem
+spec:
+        iteration: 100
